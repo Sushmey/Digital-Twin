@@ -51,12 +51,7 @@ def answer_user_question(
     )
 
     # 4. RAG chain
-    system_template = """
-    You are a strict information retriever. Answer the user's question using ONLY the information 
-    found in the retrieved files. Do NOT add explanations, assumptions, or outside knowledge. 
-    If the answer cannot be found in the documents, respond with 'Not in the documents'.
-    Always keep your answers concise and factual.
-    """
+    system_template = os.getenv("SYSTEM_TEMPLATE")
 
     human_template = "{question}\n\nContext:\n{context}"
 
