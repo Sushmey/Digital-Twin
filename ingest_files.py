@@ -22,7 +22,7 @@ def ingest_text_to_pinecone(
 
     # 2. Embeddings
     embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-mpnet-base-v2"
+        model_name=os.getenv("EMBEDDING_MODEL")
     )
 
     # 3. Pinecone init
